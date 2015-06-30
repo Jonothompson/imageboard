@@ -25,8 +25,7 @@ module.exports = function(environment) {
       'connect-src': "'self' api.parse.com",
       'img-src': "'self'",
       'style-src': "'self'",
-      'media-src': "'self'"
-     }		     
+      'media-src': "'self'"	     
     }
   };
 
