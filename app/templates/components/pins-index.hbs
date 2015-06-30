@@ -1,8 +1,10 @@
 
-{{#each pins as |pin|}}
+{{#each model as |pin|}}
 	<li class="pin-thumbnail">
 		<a href="{{pin.url}}">{{pin.title}}</a>
 	</li>
 {{/each}}
+
+{{link-to "Create" 'pins.create'}}
 
 {{yield}}
