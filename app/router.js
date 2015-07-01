@@ -11,6 +11,15 @@ Router.map(function() {
     this.route('show', {path: '/:pin_id'});
     this.route('loading');
   });
+  this.route('landing', {path: '/'});
+
+  this.route('sessions', function() {
+    this.route('create');
+  });
+
+  this.route('user', function() {
+    this.route('create');
+  });
 });
 
 export default Router;
