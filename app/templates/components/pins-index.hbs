@@ -5,11 +5,10 @@
 			{{#link-to 'pins.show' pin}}
 				{{pin.title}}
 			{{/link-to}}
-				<a href="{{pin.url}}">{{pin.url}}</a>
+			<a href="{{pin.url}}">{{pin.url}}</a>
 		</h3>
 	</li>
 {{/each}}
 
 {{link-to "Create" 'pins.create'}}
 
-{{yield}}
