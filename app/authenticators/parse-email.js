@@ -8,7 +8,7 @@ ParseAuthenticator = Base.extend({
     if (data == null) {
       data = {};
     }
-    store = this.container.lookup('store:main');
+    store = this.container.lookup('service:store');
     adapter = store.adapterFor('application');
     sessionToken = data.sessionToken;
 
@@ -29,7 +29,7 @@ ParseAuthenticator = Base.extend({
     if (data == null) {
       data = {};
     }
-    store = this.container.lookup('service: store');
+    store = this.container.lookup('service:store');
     adapter = store.adapterFor('application');
     user = data.user;
     if (user) {
@@ -40,7 +40,13 @@ ParseAuthenticator = Base.extend({
       };
       return Ember.RSVP.resolve(data);
     } else {
-      return store.modelFor('parseUser').login(store, data).then(function(user) {
+      return store.modelFor('parseUser').login(store, {
+        
+        username: data.identification,
+        
+        password: data.password
+        
+      }).then(function(user) {
         console.log('authenticator:authenticate', user.get('sessionToken'));
         adapter.set('sessionToken', user.get('sessionToken'));
         data = {

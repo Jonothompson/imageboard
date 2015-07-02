@@ -19,6 +19,7 @@ Router.map(function() {
 
   this.route('user', function() {
     this.route('create');
+    this.route('show', {path: ':id'});
   });
 });
 

@@ -35,6 +35,9 @@ module.exports = function(environment) {
       'connect-src': "'self'",
       'img-src': "'self'",
       'media-src': "'self'"
+    },
+    'simple-auth': {
+      routeAfterAuthentication: 'landing'
     }
   };
 
